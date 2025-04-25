@@ -65,7 +65,7 @@ export default function Preferences() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex justify-between items-center mb-4">
             <h1 className="text-3xl font-bold text-gray-800">Your Ethical Preferences</h1>
             <button
               onClick={() => setShowMethodology(!showMethodology)}
@@ -73,6 +73,15 @@ export default function Preferences() {
             >
               {showMethodology ? 'Hide Methodology' : 'About This System'}
             </button>
+          </div>
+
+          <div className="mb-8">
+            <p className="text-gray-600 mb-4">
+              Your ethical preferences help us personalize your experience and recommendations. Using quadratic voting, you can express not just what matters to you, but how much it matters relative to other considerations.
+            </p>
+            <p className="text-gray-600">
+              These preferences will influence your meal recommendations, shopping suggestions, and help you make choices that align with your values.
+            </p>
           </div>
 
           {showMethodology && (

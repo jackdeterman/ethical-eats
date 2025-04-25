@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from 'next/navigation';
 
 export default function Navigation({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="flex min-h-screen">
@@ -53,7 +55,11 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
             <li>
               <Link 
                 href="/" 
-                className="flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors"
+                className={`flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors ${
+                  pathname === '/'
+                    ? 'border-b-2 border-green-500'
+                    : 'border-transparent'
+                }`}
                 onClick={() => setIsSidebarOpen(false)}
               >
                 <span>Home</span>
@@ -61,8 +67,25 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
             </li>
             <li>
               <Link 
+                href="/profile" 
+                className={`flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors ${
+                  pathname === '/profile'
+                    ? 'border-b-2 border-green-500'
+                    : 'border-transparent'
+                }`}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                <span>Profile</span>
+              </Link>
+            </li>
+            <li>
+              <Link 
                 href="/preferences" 
-                className="flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors"
+                className={`flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors ${
+                  pathname === '/preferences'
+                    ? 'border-b-2 border-green-500'
+                    : 'border-transparent'
+                }`}
                 onClick={() => setIsSidebarOpen(false)}
               >
                 <span>Your Preferences</span>
@@ -71,7 +94,11 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
             <li>
               <Link 
                 href="/planner" 
-                className="flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors"
+                className={`flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors ${
+                  pathname === '/planner'
+                    ? 'border-b-2 border-green-500'
+                    : 'border-transparent'
+                }`}
                 onClick={() => setIsSidebarOpen(false)}
               >
                 <span>Your Recommendations</span>

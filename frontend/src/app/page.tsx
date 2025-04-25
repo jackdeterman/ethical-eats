@@ -1,112 +1,139 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from 'next/link';
-
-interface Nutrition {
-  calories: number;
-  protein: number;
-  carb: number;
-  fat: number;
-}
-
-interface Food {
-  id: number;
-  name: string;
-  carbon_score: number;
-  water_score: number;
-  labor_score: number;
-  cost_score: number;
-  diet_tags: string[];
-  nutrition: Nutrition;
-}
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-green-800 mb-6">
-            Ethical Eats
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Make informed food choices that align with your values. 
-            Personalize your diet based on what matters most to you.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Link 
-              href="/preferences" 
-              className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
-            >
-              Set Your Preferences
-            </Link>
-            <Link 
-              href="/planner" 
-              className="bg-white text-green-600 border border-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors"
-            >
-              Plan Your Meals
-            </Link>
+      <div className="bg-gradient-to-b from-green-50 to-white">
+        <div className="container mx-auto px-4 py-24">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+              Make Every Meal Count
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              Discover how your food choices impact the world. Get personalized recommendations that align with your values.
+            </p>
+            <div className="flex justify-center gap-4">
+              <Link
+                href="/preferences"
+                className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium"
+              >
+                Get Started
+              </Link>
+              <Link
+                href="/about"
+                className="bg-white text-green-600 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium border border-green-600"
+              >
+                Learn More
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* User Profile Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Your Ethical Profile</h2>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-gray-600">Environmental Impact</span>
-              <span className="text-green-600 font-medium">High Priority</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-600">Animal Welfare</span>
-              <span className="text-green-600 font-medium">Medium Priority</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-600">Labor Conditions</span>
-              <span className="text-green-600 font-medium">High Priority</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-600">Religious Considerations</span>
-              <span className="text-gray-400">Not Set</span>
-            </div>
-          </div>
-          <div className="mt-8">
-            <Link 
-              href="/preferences" 
-              className="text-green-600 hover:text-green-700 font-medium"
-            >
-              Adjust Your Preferences →
-            </Link>
-          </div>
-        </div>
-      </section>
+      </div>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Personalized Recommendations</h3>
+      <div className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              How Ethical Eats Works
+            </h2>
             <p className="text-gray-600">
-              Get meal suggestions tailored to your ethical priorities and dietary needs.
+              A simple three-step process to make more ethical food choices
             </p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Smart Grocery Shopping</h3>
-            <p className="text-gray-600">
-              Let us help you shop for ingredients that match your values.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Transparent Data</h3>
-            <p className="text-gray-600">
-              Access our open-source database of food impact scores and sources.
-            </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Set Your Preferences</h3>
+              <p className="text-gray-600">
+                Tell us what matters to you - environmental impact, animal welfare, labor conditions, and more.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Get Recommendations</h3>
+              <p className="text-gray-600">
+                Receive personalized meal and shopping suggestions that align with your values.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Make an Impact</h3>
+              <p className="text-gray-600">
+                Track your progress and see how your choices contribute to positive change.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+
+      {/* Impact Section */}
+      <div className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              The Power of Ethical Eating
+            </h2>
+            <p className="text-gray-600">
+              Small changes in your food choices can have a big impact
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Environmental Impact</h3>
+              <p className="text-gray-600 mb-4">
+                Food production accounts for 26% of global greenhouse gas emissions. Your choices matter.
+              </p>
+              <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-full bg-green-600 rounded-full" style={{ width: '75%' }} />
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Social Impact</h3>
+              <p className="text-gray-600 mb-4">
+                Supporting fair trade and ethical labor practices helps create a more just food system.
+              </p>
+              <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-full bg-green-600 rounded-full" style={{ width: '60%' }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-24 bg-green-600">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Ready to Make a Difference?
+            </h2>
+            <p className="text-green-100 mb-8">
+              Join thousands of others who are making more ethical food choices every day.
+            </p>
+            <Link
+              href="/preferences"
+              className="bg-white text-green-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium inline-block"
+            >
+              Start Your Journey
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
