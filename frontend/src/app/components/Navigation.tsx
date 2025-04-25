@@ -65,7 +65,7 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
                 className="flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors"
                 onClick={() => setIsSidebarOpen(false)}
               >
-                <span>Preferences</span>
+                <span>Your Preferences</span>
               </Link>
             </li>
             <li>
@@ -74,7 +74,7 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
                 className="flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors"
                 onClick={() => setIsSidebarOpen(false)}
               >
-                <span>Meal Planner</span>
+                <span>Your Recommendations</span>
               </Link>
             </li>
             <li>
@@ -83,7 +83,7 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
                 className="flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors"
                 onClick={() => setIsSidebarOpen(false)}
               >
-                <span>Grocery Shopper</span>
+                <span>Shopping Assistant</span>
               </Link>
             </li>
             <li>
@@ -92,7 +92,7 @@ export default function Navigation({ children }: { children: React.ReactNode }) 
                 className="flex items-center px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors"
                 onClick={() => setIsSidebarOpen(false)}
               >
-                <span>Data & Sources</span>
+                <span>Database & References</span>
               </Link>
             </li>
             <li>
