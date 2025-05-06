@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, Column, Integer, String, Float, JSON, ForeignKey, Table
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from sqlalchemy.sql import expression
 
 Base = declarative_base()
 
@@ -9,43 +10,11 @@ class Food(Base):
     
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
-    category = Column(String)
     
-    # Environmental Impact Scores
-    environmental_scores = Column(JSON, default={
-        'carbon_footprint': None,
-        'water_usage': None,
-        'land_use': None,
-        'biodiversity_impact': None
-    })
-    
-    # Ethical Scores
-    ethical_scores = Column(JSON, default={
-        'animal_welfare': None,
-        'labor_conditions': None,
-        'fair_trade': None
-    })
-    
-    # Dietary Information
-    dietary_flags = Column(JSON, default={
-        'vegan': False,
-        'vegetarian': False,
-        'halal': False,
-        'kosher': False,
-        'gluten_free': False
-    })
-    
-    # Nutritional Information
-    nutrition = Column(JSON, default={
-        'calories': None,
-        'protein': None,
-        'carbs': None,
-        'fats': None,
-        'vitamins': {}
-    })
+    carbon_footprint = Column(Float)
     
     # Source Citations
-    sources = Column(JSON, default=[])
+    sources = Column(JSON, nullable=False, server_default='[]')
 
 class User(Base):
     __tablename__ = 'users'

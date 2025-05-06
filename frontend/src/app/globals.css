@@ -5,8 +5,35 @@
   --foreground: #171717;
   --card-bg: #ffffff;
   --card-border: #e5e7eb;
-  --primary: #3b82f6;
-  --primary-hover: #2563eb;
+  --primary: var(--moss);
+  --primary-hover: var(--moss-dark);
+  --accent: #6366f1;
+  --accent-light: #a5b4fc;
+  --coral: #e28b7c;
+  --moss: #a3b18a;
+  --moss-dark: #7b8c5a;
+  --success: var(--moss);
+  --error: #e57373;
+  --info: #6366f1;
+  --warning: #fbbf24;
+}
+
+[data-theme="dark"] {
+  --background: #18181b;
+  --foreground: #f3f4f6;
+  --card-bg: #23272e;
+  --card-border: #333843;
+  --primary: #a3b18a;
+  --primary-hover: #7b8c5a;
+  --accent: #818cf8;
+  --accent-light: #6366f1;
+  --coral: #e28b7c;
+  --moss: #a3b18a;
+  --moss-dark: #7b8c5a;
+  --success: #a3b18a;
+  --error: #ef9a9a;
+  --info: #818cf8;
+  --warning: #fde68a;
 }
 
 body {
